@@ -4,6 +4,7 @@ locals {
 
 variable "project" {
   description = "Project ID for GCP."
+  default = "zoomcamp-2024-411805"
   type = string
 }
 

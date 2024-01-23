@@ -4,6 +4,6 @@ FROM python:3.10
 RUN pip install pandas sqlalchemy psycopg2 pyarrow fastparquet
 
 WORKDIR /app
-COPY ingest_data.py ingest_data.py
+COPY ./week_01/ingest_data.py ingest_data.py
 
 ENTRYPOINT [ "python", "ingest_data.py" ]
