@@ -36,3 +36,5 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+green_tripdata_2020-10_2020-12.parquet/
