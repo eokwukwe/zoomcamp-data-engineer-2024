@@ -38,3 +38,5 @@ override.tf.json
 terraform.rc
 
 green_tripdata_2020-10_2020-12.parquet/
+
+__pycache__/
