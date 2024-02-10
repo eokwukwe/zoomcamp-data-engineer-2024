@@ -40,3 +40,5 @@ terraform.rc
 green_tripdata_2020-10_2020-12.parquet/
 
 __pycache__/
+
+etl_log.txt
