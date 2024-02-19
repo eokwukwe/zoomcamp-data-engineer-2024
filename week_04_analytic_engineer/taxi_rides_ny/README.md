@@ -1,4 +1,4 @@
-Welcome to your new dbt project!
+# zoomcamp-2024-taxi-trips-ny
 
 ### Using the starter project
 
