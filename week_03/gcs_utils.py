@@ -47,8 +47,8 @@ def delete_bucket_blobs(client: storage.Client, bucket_name) -> None:
 
 
 def web_to_gcs(client: storage.Client, bucket_name: str,
-               year: str, service: str, count=12) -> None:
-    for i in range(count):
+               year: str, service: str, num_of_months=12) -> None:
+    for i in range(num_of_months):
 
         # sets the month part of the file_name string
         month = '0'+str(i+1)
@@ -71,3 +71,13 @@ def web_to_gcs(client: storage.Client, bucket_name: str,
 
             print(f"Uploaded {download_url} to GCS\n")
 
+
+if __name__ == "__main__":
+    client = storage.Client()
+    bucket_name = os.environ.get("GOOGLE_GCS_BUCKET")
+    services = ['fhv', 'green', 'yellow']
+    year = '2020'
+
+    # https://d37ci6vzurychx.cloudfront.net/trip-data/fhv_tripdata_2019-05.parquet
+
+    web_to_gcs(client, bucket_name, 2019, 'fhv')

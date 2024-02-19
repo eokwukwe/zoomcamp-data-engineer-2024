@@ -29,8 +29,9 @@ if __name__ == "__main__":
     try:
 
         # upload the green taxi data to GCS
-        msg = f">>>>> Uploading green taxi data to GCS bucket: {q.bucket_name}\n"
+        msg = f">>>> Uploading green taxi data to GCS bucket: {q.bucket_name}\n"
         print(msg)
+
         bigquery_utils.log_progress(msg)
 
         gcs_utils.web_to_gcs(client=gcs_client,
@@ -41,8 +42,9 @@ if __name__ == "__main__":
         time.sleep(4)
 
         # # Create external table from GCS
-        msg = f">>>>> Creating external table from GCS bucket: {q.bucket_name}\n"
+        msg = f">>>> Creating external table from GCS bucket: {q.bucket_name}\n"
         print(msg)
+
         bigquery_utils.log_progress(msg)
         bigquery_utils.run_query(q.create_external_table, client)
 
@@ -69,8 +71,8 @@ if __name__ == "__main__":
 
         count = [row[0] for row in result][0]
 
-        print(
-            f">>>>> Count of records for the 2022 Green Taxi Data: {count}\n")
+        print(f">>> Count of records for the 2022 Green Taxi Data: {count}\n")
+
         bigquery_utils.log_progress(
             f"Count of records for the 2022 Green Taxi Data: {count}\n")
 
@@ -79,6 +81,7 @@ if __name__ == "__main__":
         # Estimated amount of data that will be read when querying each table
         # for the distinct number of PULocationIDs
         print(">>>>> Estimating amount of data the distinct number of PULocationIDs")
+
         bigquery_utils.log_progress(
             "Estimating amount of data the distinct number of PULocationIDs")
 
